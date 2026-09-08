@@ -1,0 +1,18 @@
+/* Fontes self-hosted (variáveis, subset latin) — sem requisições a terceiros.
+   Gerado a partir de scripts/fetch-fonts.py */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter-var.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+  src: url('/fonts/sora-var.woff2') format('woff2');
+}
