@@ -9,10 +9,10 @@ Instagram oficial: [@turmamore](https://www.instagram.com/turmamore) (botão no 
 
 ## Stack
 
-- **Next.js 15** (App Router) + **React 18** + **TypeScript**
-- **Tailwind CSS** · **Framer Motion** · **GSAP + ScrollTrigger** · **Lenis** (smooth scroll)
-- **Three.js / React Three Fiber / Drei** (fundo 3D ambiente, lazy, só desktop)
-- **Lucide Icons** · fontes **Inter/Sora self-hosted** (woff2 variáveis em `public/fonts/`)
+- **Next.js 15.5** (App Router) + **React 19** + **TypeScript**
+- **Tailwind CSS** · **Framer Motion 12** · **GSAP + ScrollTrigger** · **Lenis** (smooth scroll)
+- **Three.js / React Three Fiber 9 / Drei 10** (fundo 3D ambiente, lazy, só desktop)
+- **Lucide Icons** (+ `BrandIcons.tsx` p/ ícones de marca) · fontes **Inter/Sora self-hosted**
 
 ## Rodar localmente
 

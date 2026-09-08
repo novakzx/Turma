@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import type { ReactNode } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Instagram, Youtube, Twitter, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { InstagramIcon, XIcon, YoutubeIcon } from '@/components/BrandIcons';
 import Logo from '@/components/Logo';
 import { site } from '@/config/site';
 import { hrefToId, scrollToId } from '@/lib/scroll';
@@ -19,13 +21,13 @@ const COMPANY_LINKS = ['Sobre', 'Privacidade', 'Termos', 'Contato'];
 const instagramUrl = `https://www.instagram.com/${site.instagram}`;
 
 const SOCIALS: Array<{
-  icon: typeof Instagram;
+  icon: (props: { className?: string }) => ReactNode;
   label: string;
   href?: string;
 }> = [
-  { icon: Instagram, label: 'Instagram', href: instagramUrl },
-  { icon: Twitter, label: 'X / Twitter' },
-  { icon: Youtube, label: 'YouTube' },
+  { icon: InstagramIcon, label: 'Instagram', href: instagramUrl },
+  { icon: XIcon, label: 'X / Twitter' },
+  { icon: YoutubeIcon, label: 'YouTube' },
   { icon: Mail, label: 'Email', href: `mailto:${site.contactEmail}` },
 ];
 
@@ -134,7 +136,7 @@ export default function Footer() {
             className="group order-1 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 py-2.5 pl-2.5 pr-6 backdrop-blur transition-all duration-300 hover:border-brand-400 hover:bg-brand-600/20 hover:shadow-glow lg:order-2"
           >
             <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white transition-transform duration-300 group-hover:scale-110">
-              <Instagram className="h-5 w-5" />
+              <InstagramIcon className="h-5 w-5" />
             </span>
             <span className="text-left">
               <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
