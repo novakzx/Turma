@@ -75,6 +75,18 @@ export function middleware(request: NextRequest) {
     response.headers.set(key, value);
   }
 
+  // Documentos HTML nunca podem ser servidos de cache stale:
+  // garante que o browser sempre busque o HTML novo (com os hashes novos).
+  // Assets /_next/static continuam com cache longo (nomes com hash).
+  const { pathname } = request.nextUrl;
+  const isDocument =
+    !pathname.startsWith('/_next') && !pathname.includes('.') && pathname !== '/favicon.ico';
+  if (isDocument) {
+    response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    response.headers.set('Pragma', 'no-cache');
+    response.headers.set('Expires', '0');
+  }
+
   return response;
 }
 
