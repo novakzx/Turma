@@ -23,12 +23,12 @@ body {
 }
 
 body {
-  @apply bg-surface font-sans text-slate-900 antialiased;
+  @apply bg-[#020617] font-sans text-white antialiased;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: rgba(108, 86, 240, 0.9);
+  background: rgba(37, 99, 235, 0.35);
   color: #fff;
 }
 
@@ -49,12 +49,12 @@ html.lenis body {
   width: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c9cbe0;
+  background: #1e3a5f;
   border-radius: 8px;
-  border: 2px solid #f7f8fc;
+  border: 2px solid #020617;
 }
 ::-webkit-scrollbar-track {
-  background: #f7f8fc;
+  background: #020617;
 }
 
 /* ---------- Noise overlay ---------- */
@@ -83,19 +83,19 @@ html.lenis body {
 #cursor-dot {
   width: 6px;
   height: 6px;
-  background: var(--brand);
+  background: #38bdf8;
 }
 #cursor-ring {
   width: 36px;
   height: 36px;
-  border: 1.5px solid rgba(108, 86, 240, 0.5);
+  border: 1.5px solid rgba(56, 189, 248, 0.5);
   background: transparent;
 }
 #cursor-ring.is-hover {
   width: 56px;
   height: 56px;
-  background: rgba(108, 86, 240, 0.08);
-  border-color: rgba(108, 86, 240, 0.9);
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.9);
 }
 @media (pointer: fine) {
   body.custom-cursor,
