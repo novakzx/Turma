@@ -18,8 +18,8 @@ export default function Preloader() {
     const t1 = window.setTimeout(() => {
       setPhase('exit');
       document.body.style.overflow = '';
-    }, 1100);
-    const t2 = window.setTimeout(() => setPhase('gone'), 1800);
+    }, 700);
+    const t2 = window.setTimeout(() => setPhase('gone'), 1100);
     return () => {
       window.clearTimeout(t1);
       window.clearTimeout(t2);
@@ -33,42 +33,25 @@ export default function Preloader() {
     <AnimatePresence>
       {phase !== 'gone' && (
         <motion.div
-          className="fixed inset-0 z-[95] flex flex-col items-center justify-center bg-navy-950"
-          exit={{ opacity: 0, filter: 'blur(8px)' }}
-          transition={{ duration: 0.65, ease: [0.76, 0, 0.24, 1] }}
+          className="fixed inset-0 z-[95] flex flex-col items-center justify-center bg-[#07080d]"
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.35 }}
           aria-hidden="true"
         >
-          {/* Luz azul de fundo no preloader */}
-          <div className="pointer-events-none absolute h-64 w-64 rounded-full bg-blue-600/20 blur-[90px]" />
+          <LogoMark className="h-12 w-12" />
 
-          <motion.div
-            initial={{ scale: 0.7, rotate: -45, opacity: 0 }}
-            animate={{ scale: 1, rotate: 0, opacity: 1 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <LogoMark className="h-16 w-16 drop-shadow-[0_0_35px_rgba(59,130,246,0.8)]" />
-          </motion.div>
-
-          <div className="mt-6 flex overflow-hidden">
-            {site.name.split('').map((ch, i) => (
-              <motion.span
-                key={i}
-                className="font-display text-2xl font-extrabold text-white"
-                initial={{ y: '110%', opacity: 0 }}
-                animate={{ y: '0%', opacity: 1 }}
-                transition={{ delay: 0.25 + i * 0.05, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-              >
-                {ch}
-              </motion.span>
-            ))}
+          <div className="mt-4">
+            <span className="font-display text-xl font-bold text-white">
+              {site.name}
+            </span>
           </div>
 
-          <div className="mt-8 h-1 w-44 overflow-hidden rounded-full bg-white/10">
+          <div className="mt-6 h-0.5 w-32 overflow-hidden bg-white/10">
             <motion.div
-              className="h-full bg-blue-500 shadow-[0_0_12px_#3b82f6]"
+              className="h-full bg-blue-500"
               initial={{ x: '-100%' }}
               animate={{ x: '0%' }}
-              transition={{ duration: 1.0, ease: 'easeInOut' }}
+              transition={{ duration: 0.65, ease: 'easeInOut' }}
             />
           </div>
         </motion.div>

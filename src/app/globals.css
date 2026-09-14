@@ -3,26 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --brand: #3b82f6;
-  --brand-glow: rgba(59, 130, 246, 0.5);
-  --navy: #030712;
+  --brand: #2563eb;
+  --bg: #07080d;
 }
 
 html {
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: 80px;
-  background-color: #030712;
+  background-color: #07080d;
   color-scheme: dark;
 }
 
 body {
   -webkit-tap-highlight-color: transparent;
-  background-color: #030712;
-  color: #f1f5f9;
-}
-
-html,
-body {
+  background-color: #07080d;
+  color: #e4e4e7;
   overflow-x: clip;
 }
 
@@ -32,7 +27,7 @@ body {
 }
 
 ::selection {
-  background: rgba(37, 99, 235, 0.85);
+  background: #2563eb;
   color: #ffffff;
 }
 
@@ -48,31 +43,19 @@ html.lenis body {
   overflow: hidden;
 }
 
-/* ---------- Scrollbar ---------- */
+/* ---------- Scrollbar minimalista ---------- */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.25);
+  background: #27272a;
   border-radius: 9999px;
-  border: 2px solid #030712;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(59, 130, 246, 0.5);
+  background: #3f3f46;
 }
 ::-webkit-scrollbar-track {
-  background: #030712;
-}
-
-/* ---------- Noise overlay ---------- */
-.noise::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 80;
-  pointer-events: none;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background: #07080d;
 }
 
 /* ---------- Custom cursor ---------- */
@@ -88,24 +71,22 @@ html.lenis body {
   will-change: transform;
 }
 #cursor-dot {
-  width: 6px;
-  height: 6px;
-  background: #60a5fa;
-  box-shadow: 0 0 10px #3b82f6;
+  width: 5px;
+  height: 5px;
+  background: #3b82f6;
 }
 #cursor-ring {
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid rgba(96, 165, 250, 0.45);
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   background: transparent;
-  transition: width 0.25s ease-out, height 0.25s ease-out, background-color 0.25s ease-out, border-color 0.25s ease-out;
+  transition: width 0.2s ease-out, height 0.2s ease-out, border-color 0.2s ease-out;
 }
 #cursor-ring.is-hover {
-  width: 54px;
-  height: 54px;
-  background: rgba(59, 130, 246, 0.12);
-  border-color: rgba(96, 165, 250, 0.9);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  width: 48px;
+  height: 48px;
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.05);
 }
 @media (pointer: fine) {
   body.custom-cursor,
@@ -121,43 +102,9 @@ html.lenis body {
   }
 }
 
-/* ---------- Decorative backgrounds ---------- */
-.bg-grid-futuristic {
-  background-image: 
-    linear-gradient(to right, rgba(59, 130, 246, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(59, 130, 246, 0.07) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
-
-.mask-radial-hero {
-  mask-image: radial-gradient(ellipse 80% 65% at 50% 35%, black 20%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 65% at 50% 35%, black 20%, transparent 80%);
-}
-
-.mask-radial-subtle {
-  mask-image: radial-gradient(ellipse 90% 70% at 50% 50%, black 30%, transparent 90%);
-  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 50%, black 30%, transparent 90%);
-}
-
 @layer components {
   .container-x {
-    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
-  }
-  .glass-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
-  }
-  .glass-pill {
-    background: rgba(15, 23, 42, 0.6);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(59, 130, 246, 0.25);
-  }
-  .glow-blue-subtle {
-    text-shadow: 0 0 25px rgba(96, 165, 250, 0.4);
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
   }
 }
 
