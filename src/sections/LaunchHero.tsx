@@ -47,8 +47,19 @@ export default function LaunchHero() {
           <Countdown />
         </div>
 
-        {/* Ações: Instagram oficial e atalho para a seção Sobre */}
-        <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+        {/* Ação principal: acesso antecipado */}
+        <div className="mt-10 sm:mt-12">
+          <button
+            onClick={() => scrollToId('acesso-antecipado')}
+            className="inline-flex items-center gap-2.5 rounded-xl bg-blue-500 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-blue-400"
+          >
+            <span>Quero acesso antecipado</span>
+            <ArrowDown className="h-4 w-4" />
+          </button>
+        </div>
+
+        {/* Ações secundárias: Instagram oficial e atalho para a seção Sobre */}
+        <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           <a
             href={site.instagramUrl}
             target="_blank"

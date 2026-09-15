@@ -46,6 +46,13 @@ export default function Header() {
             Sobre
           </button>
 
+          <button
+            onClick={() => scrollToId('acesso-antecipado')}
+            className="hidden rounded-lg border border-blue-500/40 bg-blue-500/10 px-3.5 py-1.5 text-xs sm:text-sm font-medium text-blue-300 transition-colors hover:border-blue-500/70 hover:text-white sm:inline-flex"
+          >
+            Acesso antecipado
+          </button>
+
           {/* Botão de Instagram */}
           <a
             href={site.instagramUrl}
